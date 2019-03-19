@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#element1{
+    width: 50%;
+    margin: 0 auto;
+    height: 10rem;
+    background: red;
+    z-index: 1;
+}
+
+#element2{
+    width: 50%;
+    margin: 0 auto;
+    height: 50%;
+    background: blue;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+#element3{
+    width: 50%;
+    margin: 0 auto;
+    height: 50%;
+    background: yellow;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.display-none{
+    display: none;
+}
+
+.naloga-izpis--actual > li {
+    margin: 1rem 0;
+}
+
+#prikaz-id--actual{
+    display: flex;
+    height: 1rem;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
