@@ -9,7 +9,6 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "smooth-scroll": "^16.0.2",
-    "superagent": "^4.1.0",
     "uuid": "^3.3.2"
   },
   "scripts": {
