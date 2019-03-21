@@ -16,7 +16,12 @@
     <h1 class="text-center mb-8 mt-8">CREATIM Naloge</h1>
     <div class="prva_naloga text-center container mx-auto mb-8">
         <h2 class="mb-3">Prva naloga:</h2>
-        <p class="mb-3">Klik na gumb za izpis večkratnikov 3 in 5, med števili 1-100</p>
+        <p class="mb-3">
+            Klik na gumb za izpis večkratnikov 3 in 5, med števili 1-100
+            <br>
+            Rešena naloga na githubu: <a href="https://github.com/fajfara/creatim-naloge/blob/master/NALOGE_JS/prva.js">github link</a>
+
+        </p>
         <div class="prva_naloga--buttons" id="prvaButtons">
             <button
                 class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">
@@ -34,20 +39,22 @@
             </ul>
             <pre class="koda-izpis display-none">
                     <code class="language-js">
-                            for (var x = 1; x <= 100; x++){
+                            for (var stevilo = 1; stevilo <= 100; stevilo++) {
+                                var liStevilka = document.createElement("LI");
                                 // Preveri ali je število večkratnik obeh
-                                if( x % 3 == 0 && x % 5 == 0 ) {
-                                    console.log("Trojka in Petka: " + x);
-                                } 
+                                if (stevilo % 3 == 0 && stevilo % 5 == 0) {
+                                    liStevilka.innerHTML = "Večkratnik obeh: " + stevilo;
+                                }
                                 // Preveri če je samo večkratnik 3
-                                else if(x % 3 == 0){
-                                        console.log("Trojka: " + x);
+                                else if (stevilo % 3 == 0) {
+                                    liStevilka.innerHTML = "Večkratnik trojke: " + stevilo;
                                 }
                                 // Preveri če je samo večkratnik 5
-                                else if( x % 5 == 0 ) {
-                                        console.log("Petka: " + x);
-                                    
-                                }
+                                else if (stevilo % 5 == 0) {
+                                    liStevilka.innerHTML = "Večkratnik petke: " + stevilo;
+                        
+                                };
+                                prvaNalogaIzpis[0].appendChild(liStevilka);
                             };
                     </code>
                 </pre>
@@ -57,7 +64,11 @@
     </div>
     <div class="druga_naloga text-center container mx-auto mb-8">
         <h2 class="mb-3">Druga naloga:</h2>
-        <p class="mb-3">Klik na gumb za izpis ali štetja ali kode</p>
+        <p class="mb-3">
+            Klik na gumb za izpis ali štetja ali kode
+            <br>
+            Rešena naloga na githubu: <a href="https://github.com/fajfara/creatim-naloge/blob/master/NALOGE_JS/Druga.js">github link</a>
+        </p>
         <div class="druga_naloga--buttons" id="drugaButtons">
             <button
                 class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">
@@ -75,12 +86,28 @@
             </p>
             <pre class="koda-izpis display-none">
                         <code class="language-js">
+                                // Rešitev naloge
                                 (function(){
                                     var index, 
                                         length = 20;
                                     for(index = 0; index <= length; index++){
                                         (function(ind) {
                                             setTimeout(function(){console.log(ind);}, 100 + (200 * ind));
+                                        })(index);
+                                    };
+                                })();
+
+                                // Koda za to spletno stran
+                                (function () {
+                                    var index,
+                                        length = 20;
+                                    for (index = 0; index <= length; index++) {
+                                        (function (ind) {
+                                            setTimeout(function () {
+                            
+                                                drugaNalogaIzpis[0].innerHTML = "";
+                                                drugaNalogaIzpis[0].innerHTML = ind;;
+                                            }, 100 + (200 * ind));
                                         })(index);
                                     };
                                 })();
@@ -91,7 +118,15 @@
     </div>
     <div class="tretja_naloga text-center container mx-auto mb-8">
         <h2 class="mb-3">Tretja naloga:</h2>
-        <p class="mb-3">Gumb za alert dela samo v IE 7</p>
+        <p class="mb-3">
+            <del>Gumb za alert dela samo v IE 7</del> 
+            <br>
+            <ins>
+                Ta spletna stran ne podpira IE 7 oz. trenutno ne deluje v tem brskalniku.
+                Rešena naloga je na githubu: <a href="https://github.com/fajfara/creatim-naloge/blob/master/NALOGE_JS/Tretja.js">github link</a>
+            </ins>
+
+        </p>
         <div class="tretja_naloga--buttons" id="tretjaButtons">
             <button
                 class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">
@@ -121,6 +156,9 @@
     </div>
     <div class="cetrta_naloga text-center container mx-auto mb-8">
         <h2 class="mb-3">Četrta naloga:</h2>
+        <p class="mb-3">
+                Rešena naloga na githubu: <a href="https://github.com/fajfara/creatim-naloge/blob/master/NALOGE_JS/Cetrta.js">github link</a>
+        </p>
         <div class="cetrta_naloga--buttons" id="cetrtaButtons">
             <button
                 class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded"
@@ -159,7 +197,12 @@
     <div class="peta_naloga container mx-auto text-center mb-8">
 
         <h2 class="mb-3">Peta naloga:</h2>
-        <p class="mb-3">Klik na gumb za prikaz pete naloge</p>
+        <p class="mb-3">
+            Klik na gumb za prikaz pete naloge
+            <br>
+            Rešena naloga na githubu: <a href="https://github.com/fajfara/creatim-naloge/blob/master/NALOGE_JS/Peta.js">github link</a>
+
+        </p>
         <div class="peta_naloga--buttons" id="petaButtons">
             <button
                 class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">
@@ -190,26 +233,29 @@
 
             <pre class="koda-izpis display-none">
                             <code class="language-js">
-                                    var elements = document.getElementsByClassName("element"),
-                                        prikazIdja = document.getElementById("prikaz-id").children;
-
-                                    for (let index = 0; index < elements.length; index++) {
-                                        const element = elements[index];
-                                        element.addEventListener("mousemove", prikaziId);
-                                        element.addEventListener("mouseleave", removeId);
-                                        
-                                    };
-
-                                    // Funkcija za prikaz na katerem div-u je uporabnik
-                                    function prikaziId(event) {
-                                        // Zapis id-ja elementa v html
-                                        prikazIdja[1].innerHTML = event.target.id;
+                                // Funkcija za prikaz na katerem div-u je uporabnik
+                                function prikaziId(event) {
+                                    // Izbria za izpis prave barve
+                                    switch (event.target.id) {
+                                        case "element1":
+                                            barva = "rdeče";
+                                            break;
+                                        case "element2":
+                                            barva = "modre";
+                                            break;
+                                        case "element3":
+                                            barva = "rumene";
+                                            break;
+                                        default:
+                                            break;
                                     }
-
-                                    // Funkcija za odstranitev id texta
-                                    function removeId() {
-                                        prikazIdja[1].innerHTML = "";
-                                    }
+                                    prikazIdja[1].innerHTML = "Div z id: " + event.target.id + " ki je " + barva + " barve!";
+                                };
+                                
+                                // Funkcija za odstranitev id texta
+                                function removeId() {
+                                    prikazIdja[1].innerHTML = "";
+                                }
                             </code>
                         </pre>
         </div>
@@ -221,8 +267,9 @@
 
     </div>
 
-
+    <!--[if !IE]><!-->
     <script src="./CUSTOM_JS/prism.js"></script>
+    <!--<![endif]-->
     <script src="./CUSTOM_JS/main.js"></script>
 </body>
 

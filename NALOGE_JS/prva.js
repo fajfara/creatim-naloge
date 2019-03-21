@@ -1,15 +1,15 @@
-for (var x = 1; x <= 100; x++){
+for (var stevilo = 1; stevilo <= 100; stevilo++){
     // Preveri ali je število večkratnik obeh
-    if( x % 3 == 0 && x % 5 == 0 ) {
-        console.log("Trojka in Petka: " + x);
+    if( stevilo % 3 == 0 && stevilo % 5 == 0 ) {
+        console.log("Trojka in Petka: " + stevilo);
     } 
     // Preveri če je samo večkratnik 3
-    else if(x % 3 == 0){
-            console.log("Trojka: " + x);
+    else if(stevilo % 3 == 0){
+            console.log("Trojka: " + stevilo);
     }
     // Preveri če je samo večkratnik 5
-    else if( x % 5 == 0 ) {
-            console.log("Petka: " + x);
+    else if( stevilo % 5 == 0 ) {
+            console.log("Petka: " + stevilo);
         
     }
 };

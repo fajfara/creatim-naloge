@@ -13,8 +13,8 @@ var prvaButtons = document.getElementById("prvaButtons").children,
     barva;
 
 
-
-var checkVars = {
+// Object 
+var naloga = {
     prvaOpened: false,
     drugaOpened: false,
     tretjaOpened: false,
@@ -22,67 +22,47 @@ var checkVars = {
     petaOpened: false,
 }
 
-// Koda za cetrto nalogo
-var object = {
-    alert: function (txt) {
-        alert(txt);
-        return this;
-    },
-    confirm: function (txt) {
-        confirm(txt);
-        odstraniVseOdprte();
-        checkVars.cetrtaOpened = true;
-        return this;
-    }
-}
 
-document.getElementById("cetrtaNalogaBtn").addEventListener("click", function () {
-    object.alert("Warning: you are about to delete this item!").confirm("Are you sure?");
-});
 
 // Za vsak gumb pod div-om od vsake naloge dodaj event listener z ustrezno  funkcijo
 
-for (let index = 0; index < prvaButtons.length; index++) {
+for (var index = 0; index < prvaButtons.length; index++) {
     if (index === 0) {
         prvaButtons[index].addEventListener("click", prikaziNalogoPrvo);
     } else if (index === 1) {
         prvaButtons[index].addEventListener("click", prikaziKodoPrvo);
     }
-}
+};
 
-for (let index = 0; index < drugaButtons.length; index++) {
+for (var index = 0; index < drugaButtons.length; index++) {
     if (index === 0) {
         drugaButtons[index].addEventListener("click", prikaziNalogoDrugo);
     } else if (index === 1) {
         drugaButtons[index].addEventListener("click", prikaziKodoDrugo);
-    }
-}
+    };
+};
 
-for (let index = 0; index < tretjaButtons.length; index++) {
+for (var index = 0; index < tretjaButtons.length; index++) {
     if (index === 0) {
         tretjaButtons[index].addEventListener("click", prikaziNalogoTretjo);
     } else if (index === 1) {
         tretjaButtons[index].addEventListener("click", prikaziKodoTretjo);
-    }
-}
+    };
+};
 
-for (let index = 0; index < cetrtaButtons.length; index++) {
+for (var index = 0; index < cetrtaButtons.length; index++) {
     if (index === 1) {
         cetrtaButtons[index].addEventListener("click", prikaziKodoCetrto);
-    }
-}
+    };
+};
 
-for (let index = 0; index < petaButtons.length; index++) {
+for (var index = 0; index < petaButtons.length; index++) {
     if (index === 0) {
         petaButtons[index].addEventListener("click", prikaziNalogoPeto);
     } else if (index === 1) {
         petaButtons[index].addEventListener("click", prikaziKodoPeto);
-    }
-}
-
-
-
-
+    };
+};
 
 
 
@@ -98,38 +78,38 @@ function prikaziNalogoPrvo() {
     // Odstrani vse prejšnje izpiske števil
     while (prvaNalogaIzpis[0].firstChild) {
         prvaNalogaIzpis[0].removeChild(prvaNalogaIzpis[0].firstChild);
-    }
-    for (var x = 1; x <= 100; x++) {
+    };
+    for (var stevilo = 1; stevilo <= 100; stevilo++) {
         var liStevilka = document.createElement("LI");
         // Preveri ali je število večkratnik obeh
-        if (x % 3 == 0 && x % 5 == 0) {
-            liStevilka.innerHTML = "Večkratnik obeh: " + x;
+        if (stevilo % 3 == 0 && stevilo % 5 == 0) {
+            liStevilka.innerHTML = "Večkratnik obeh: " + stevilo;
         }
         // Preveri če je samo večkratnik 3
-        else if (x % 3 == 0) {
-            liStevilka.innerHTML = "Večkratnik trojke: " + x;
+        else if (stevilo % 3 == 0) {
+            liStevilka.innerHTML = "Večkratnik trojke: " + stevilo;
         }
         // Preveri če je samo večkratnik 5
-        else if (x % 5 == 0) {
-            liStevilka.innerHTML = "Večkratnik petke: " + x;
+        else if (stevilo % 5 == 0) {
+            liStevilka.innerHTML = "Večkratnik petke: " + stevilo;
 
-        }
+        };
         prvaNalogaIzpis[0].appendChild(liStevilka);
     };
     prvaNalogaIzpis[0].classList.remove("display-none");
-    checkVars.prvaOpened = true;
-}
+    naloga.prvaOpened = true;
+};
 
 function prikaziKodoPrvo() {
     odstraniVseOdprte();
     // Odstrani vse prejšnje izpiske števil
     while (prvaNalogaIzpis[0].firstChild) {
         prvaNalogaIzpis[0].removeChild(prvaNalogaIzpis[0].firstChild);
-    }
+    };
 
     prvaNalogaIzpis[1].classList.remove("display-none");
-    checkVars.prvaOpened = true;
-}
+    naloga.prvaOpened = true;
+};
 
 // Funkcije za drugo nalogo
 
@@ -139,9 +119,9 @@ function prikaziNalogoDrugo() {
     // Odstrani vse prejšnje izpiske števil
     while (drugaNalogaIzpis[0].firstChild) {
         drugaNalogaIzpis[0].removeChild(drugaNalogaIzpis[0].firstChild);
-    }
+    };
     drugaNalogaIzpis[0].classList.remove("display-none");
-    checkVars.drugaOpened = true;
+    naloga.drugaOpened = true;
     (function () {
         var index,
             length = 20;
@@ -150,14 +130,13 @@ function prikaziNalogoDrugo() {
                 setTimeout(function () {
 
                     drugaNalogaIzpis[0].innerHTML = "";
-                    drugaNalogaIzpis[0].innerHTML = ind;
-                    ;
+                    drugaNalogaIzpis[0].innerHTML = ind;;
                 }, 100 + (200 * ind));
             })(index);
         };
     })();
 
-}
+};
 
 
 
@@ -166,11 +145,11 @@ function prikaziKodoDrugo() {
     // Odstrani vse prejšnje izpiske števil
     while (drugaNalogaIzpis[0].firstChild) {
         drugaNalogaIzpis[0].removeChild(drugaNalogaIzpis[0].firstChild);
-    }
+    };
 
     drugaNalogaIzpis[1].classList.remove("display-none");
-    checkVars.drugaOpened = true;
-}
+    naloga.drugaOpened = true;
+};
 
 
 // funkcije za tretjo nalogo
@@ -182,38 +161,57 @@ function prikaziNalogoTretjo() {
     while (tretjaNalogaIzpis[0].firstChild) {
         tretjaNalogaIzpis[0].removeChild(tretjaNalogaIzpis[0].firstChild);
     }
+    console.log("RUNNING");
     (function () {
         if (navigator.userAgent.match(/MSIE 7/) !== null) {
             alert("Hello World");
         } else {
             alert("Ne uporabljate IE 7");
         }
-    })()
-    checkVars.tretjaOpened = true;
-}
+    })();
+    naloga.tretjaOpened = true;
+};
 
 function prikaziKodoTretjo() {
     odstraniVseOdprte();
     // Odstrani vse prejšnje izpiske števil
     while (tretjaNalogaIzpis[0].firstChild) {
         tretjaNalogaIzpis[0].removeChild(tretjaNalogaIzpis[0].firstChild);
-    }
+    };
+
+
 
     tretjaNalogaIzpis[1].classList.remove("display-none");
-    checkVars.tretjaOpened = true;
+    naloga.tretjaOpened = true;
+};
+
+// Funkcije za cetrto nalogo, koda za četrto nalogo
+var object = {
+    alert: function (txt) {
+        alert(txt);
+        return this;
+    },
+    confirm: function (txt) {
+        confirm(txt);
+        odstraniVseOdprte();
+        naloga.cetrtaOpened = true;
+        return this;
+    }
 }
 
-// Funkcije za cetrto nalogo
+document.getElementById("cetrtaNalogaBtn").addEventListener("click", function () {
+    object.alert("Warning: you are about to delete this item!").confirm("Are you sure?");
+});
 
 function prikaziKodoCetrto() {
     odstraniVseOdprte();
     cetrtaNalogaIzpis[0].classList.remove("display-none");
-    checkVars.cetrtaOpened = true;
-}
+    naloga.cetrtaOpened = true;
+};
 
 // Funkcije za peto nalogo
-for (let index = 0; index < elements.length; index++) {
-    const element = elements[index];
+for (var index = 0; index < elements.length; index++) {
+    var element = elements[index];
     element.addEventListener("mousemove", prikaziId);
     element.addEventListener("mouseleave", removeId);
 
@@ -236,7 +234,7 @@ function prikaziId(event) {
             break;
     }
     prikazIdja[1].innerHTML = "Div z id: " + event.target.id + " ki je " + barva + " barve!";
-}
+};
 
 // Funkcija za odstranitev id texta
 function removeId() {
@@ -246,46 +244,45 @@ function removeId() {
 function prikaziNalogoPeto() {
     odstraniVseOdprte();
     petaNalogaIzpis[0].classList.remove("display-none");
-    checkVars.petaOpened = true;
+    naloga.petaOpened = true;
 }
 
 function prikaziKodoPeto() {
     odstraniVseOdprte();
     petaNalogaIzpis[1].classList.remove("display-none");
-    checkVars.petaOpened = true;
-}
-
+    naloga.petaOpened = true;
+};
 
 
 
 
 // Globalne funkcije
 function odstraniVseOdprte() {
-    if (checkVars.prvaOpened || checkVars.drugaOpened || checkVars.tretjaOpened || checkVars.cetrtaOpened || checkVars.petaOpened) {
-        for (let index = 0; index < prvaNalogaIzpis.length; index++) {
-            const element = prvaNalogaIzpis[index];
+    if (naloga.prvaOpened || naloga.drugaOpened || naloga.tretjaOpened || naloga.cetrtaOpened || naloga.petaOpened) {
+        for (var index = 0; index < prvaNalogaIzpis.length; index++) {
+            var element = prvaNalogaIzpis[index];
             element.classList.add("display-none");
-            checkVars.prvaOpened = false;
-        }
-        for (let index = 0; index < drugaNalogaIzpis.length; index++) {
-            const element = drugaNalogaIzpis[index];
+            naloga.prvaOpened = false;
+        };
+        for (var index = 0; index < drugaNalogaIzpis.length; index++) {
+            var element = drugaNalogaIzpis[index];
             element.classList.add("display-none");
-            checkVars.drugaOpened = false;
-        }
-        for (let index = 0; index < tretjaNalogaIzpis.length; index++) {
-            const element = tretjaNalogaIzpis[index];
+            naloga.drugaOpened = false;
+        };
+        for (var index = 0; index < tretjaNalogaIzpis.length; index++) {
+            var element = tretjaNalogaIzpis[index];
             element.classList.add("display-none");
-            checkVars.tretjaOpened = false;
-        }
-        for (let index = 0; index < cetrtaNalogaIzpis.length; index++) {
-            const element = cetrtaNalogaIzpis[index];
+            naloga.tretjaOpened = false;
+        };
+        for (var index = 0; index < cetrtaNalogaIzpis.length; index++) {
+            var element = cetrtaNalogaIzpis[index];
             element.classList.add("display-none");
-            checkVars.cetrtaOpened = false;
-        }
-        for (let index = 0; index < petaNalogaIzpis.length; index++) {
-            const element = petaNalogaIzpis[index];
+            naloga.cetrtaOpened = false;
+        };
+        for (var index = 0; index < petaNalogaIzpis.length; index++) {
+            var element = petaNalogaIzpis[index];
             element.classList.add("display-none");
-            checkVars.petaOpened = false;
-        }
-    }
-}
+            naloga.petaOpened = false;
+        };
+    };
+};
